@@ -7,4 +7,13 @@ fi
 
 func="lilybin-$1"
 
-aws lambda invoke --profile lilybin --invocation-type RequestResponse --function-name "$func" --region us-west-2 --log-type Tail --payload file://payload.json output.txt
+aws lambda invoke \
+  --invocation-type RequestResponse \
+  --cli-binary-format raw-in-base64-out \
+  --function-name "$func" \
+  --log-type Tail \
+  --payload file://payload.json \
+  output.txt > log.txt
+
+jq -r .LogResult log.txt | base64 -d
+jq 'del(.LogResult)' log.txt

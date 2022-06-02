@@ -57,3 +57,7 @@ if expr "x$version" : "x2\\.18\\..*" >/dev/null; then
   echo '>>> Version 2.18.* needs font.scm patch'
   cp fonts/font.scm $output/usr/share/lilypond/current/scm/font.scm
 fi
+
+
+echo '>>> Copying additional dependencies'
+cp deps/libcrypt.so.1 $output/usr/lib/

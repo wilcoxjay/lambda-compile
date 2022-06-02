@@ -31,7 +31,7 @@ cp -a index.js lib proddeps/node_modules $root
 mkdir $root/fonts
 cp -a fonts/font-stylesheets $root/fonts
 
-rm -f code.zip
+rm -f deploy-$version.zip 
 echo
 echo '>>> Zipping'
 echo ">>> cd $root && zip -r9 --symlink ../deploy-$version.zip *"

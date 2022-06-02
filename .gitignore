@@ -4,3 +4,5 @@ lib
 lilypond-*.tar.*
 proddeps
 versions.json
+ly
+package-lock.json

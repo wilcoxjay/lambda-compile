@@ -51,6 +51,7 @@ async function uploadFile(id, file, mode) {
     });
     return true;
   } catch (err) {
+    console.log(err);
     return false;
   }
 }

@@ -18,6 +18,6 @@ echo
 echo '>>> Uploading'
 echo ">>> aws --profile admin lambda update-function-code --function-name "lilybin-$version" --zip-file fileb://deploy-$version.zip"
 echo
-aws --profile admin lambda update-function-code \
+aws lambda update-function-code \
   --function-name "lilybin-$version" \
   --zip-file fileb://deploy-$version.zip
